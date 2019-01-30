@@ -1,0 +1,23 @@
+*** {{ this.temp}}
+<p > .... {{ selectCardId }}</p>
+
+<p> _____ {{ this.myObservable | async}} </p>
+
+<p> ,,, {{ this.statuses | json }}</p>
+
+
+<input [(ngModel)]="selectCardId">
+
+<p>Hello {{selectCardId}}!</p>
+
+{{ prop}}
+
+<span *ngFor="let game of statuses; let i = index">
+      <app-card *ngIf="game.playerName!='You'" [cardId]="game.cardId" [human]="false"></app-card>
+      <app-card *ngIf="game.playerName=='You'" [(cardId)]="selectCardId" [human]="true"></app-card>
+  </span>
+<br/>
+<br/>
+ <app-in-hands *ngIf="inHands" [cardIds]="inHands" [(selectCardId)]="selectCardId"></app-in-hands>
+
+
