@@ -1,0 +1,14 @@
+
+
+<p> {{ this.statuses | json }}</p>
+<h1> {{ this.selectedCard }}</h1>
+
+<span *ngFor="let game of statuses; let i = index">
+      <app-card *ngIf="game.playerName!='You'" [cardId]="game.cardId" [human]="false"></app-card>
+     <app-card *ngIf="game.playerName=='You'" [cardId]="selectedCard"></app-card>
+  </span>
+<br/>
+<br/>
+<app-in-hands *ngIf="inHands" [cardIds]="inHands"></app-in-hands>
+
+

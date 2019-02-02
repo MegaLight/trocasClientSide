@@ -1,0 +1,5 @@
+
+<button *ngIf="!human" (click)="setValue(cardId)" ngClass="btn btn-sm btn-success btn-xl">{{ helperService.getCardName(cardId) }} </button>
+<button *ngIf="human"  ngClass="btn btn-sm btn-default btn-xl flash-button">{{ helperService.getCardName(cardId) }} </button>
+
+<router-outlet></router-outlet>
